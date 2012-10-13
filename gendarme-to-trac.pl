@@ -107,7 +107,8 @@ foreach my $rule ( @rules ) {
 		}
 	}
 	
-	my $description = join($br, $type, $assembly, $problem, $solution, $br, join($br,@targets), $br, $uri);
+	my $joinTargets = join($br, @targets);
+	my $description = join($br, $type, $assembly, $problem, $solution, $br, $joinTargets, $br, $uri);
 	
 	my @row = (encode('UTF-8',$summary), encode('UTF-8',$description));
 	if(defined $reporter) {
